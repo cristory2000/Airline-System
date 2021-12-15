@@ -250,7 +250,6 @@ final public class AirlineSystem implements AirlineInterface {
         }
       }
     }
-    
     int i;
     for(i=0;i<cityNames.length;i++)
     {
@@ -277,21 +276,44 @@ final public class AirlineSystem implements AirlineInterface {
 
   public boolean updateRoute(String source, String destination, int distance,
     double price) throws CityNotFoundException {
+   
       int i;
-    for(i=0;i<cityNames.length;i++)
-    {
-      if(cityNames[i].equals(source))
+      for(i=0;i<cityNames.length;i++)
       {
-        break;
+        if(cityNames[i].equals(source))
+        {
+          break;
+        }
       }
-    }
-      for(Route l : graph.adj(i))
+      int j; 
+      for(j=0;j<cityNames.length;j++)
       {
-       // l.equals(d);
+        if(cityNames[j].equals(destination))
+        {
+          break;
+        }
+      }
+      if(!cityNames[i].equals(source)||!cityNames[j].equals(destination))
+      {
         return false;
       }
-      return false;
-  }
+      
+      for(int h=0;h<cityNames.length;h++)
+      {
+        for(Route l : graph.adj(h))
+        {
+          if(l.source.equals(source) && l.destination.equals(destination))
+          {
+            l.price=price;
+            l.distance=distance;
+            return true;
+            
+          }
+        }
+      }
+return false;
+
+
 }
 
 
