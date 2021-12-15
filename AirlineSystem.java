@@ -302,16 +302,16 @@ final public class AirlineSystem implements AirlineInterface {
       {
         for(Route l : graph.adj(h))
         {
-          if(l.source.equals(source) && l.destination.equals(destination))
+          if(l.source.equals(source) && l.destination.equals(destination) || l.source.equals(destination) && l.destination.equals(source))
           {
             l.price=price;
             l.distance=distance;
-            return true;
+            
             
           }
         }
       }
-return false;
+return true;
 
 
 }
