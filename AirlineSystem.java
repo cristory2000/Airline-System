@@ -247,15 +247,32 @@ final public class AirlineSystem implements AirlineInterface {
           {
             return false;
           }
-          else{
-            l.distance=distance;
-            l.price=price;
-            return true;
-          }
         }
       }
     }
-    return false;
+    
+    int i;
+    for(i=0;i<cityNames.length;i++)
+    {
+      if(cityNames[i].equals(source))
+      {
+        break;
+      }
+    }
+    int j; 
+    for(j=0;j<cityNames.length;j++)
+    {
+      if(cityNames[j].equals(destination))
+      {
+        break;
+      }
+    }
+    Route r = new Route(source,destination,distance,price);
+    graph.addRoute(r,cityNames); 
+    //the second path backwards
+     r = new Route(destination,source,distance,price);
+   graph.addRoute(r,cityNames); 
+    return true;
   }
 
   public boolean updateRoute(String source, String destination, int distance,
