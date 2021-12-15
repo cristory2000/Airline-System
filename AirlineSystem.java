@@ -243,10 +243,9 @@ final public class AirlineSystem implements AirlineInterface {
       {
         if(l.source.equals(source) && l.destination.equals(destination))
         {
-          if(l.distance==distance && l.price==price)
-          {
+          
             return false;
-          }
+          
         }
       }
     }
