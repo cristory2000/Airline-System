@@ -1,17 +1,10 @@
 # CS 1501 – Algorithm Implementation – Assignment #4
 
-_(Assignment adapted from Dr. John Ramirez’s CS 1501 class.)_
-
-Due: Monday December 20th @ 11:59pm on Gradescope
-
-_There is no late submission deadline for this assignment._
-
 ## Overview
 
 Purpose: The purpose of this assignment is to make you practice implementing some graph
 algorithms and to see how they can be used in a somewhat practical way.
 
-**Feel free to use as much code as you need from Lab 8 and Lab 9.**
 
 ## Details
 
@@ -146,40 +139,6 @@ public boolean addRoute(String source, String destination, int distance, double 
 public boolean updateRoute(String source, String destination, int distance, double price) throws CityNotFoundException;
 ```
 
-.	You must encapsulate the functionality of your airline in a **single, cohesive class** named `AirlineSystem.java`, which has to `implements` the `AirlineInterface`. You must represent the graph using **adjacency lists**. The cities should minimally have a string for a name and any other information you want to add. The edges will have multiple weights (distance, price). **Again, you may use the code from Lab 8 and Lab 9**.
-
-.	You must use the algorithms and implementations discussed in class for your queries. For example,  for the shortest distance paths you must use **Dijkstra’s algorithm** and to obtain the shortest-hops path you must use **breadth-first search**.
-
-. The test program `AirlineTest.java` has a menu-driven loop that asks the user for many choices. Please use this program to test your code.
-
-.	Below is an example input file, visual graph, and response to some of the queries listed above. The index numbers for the vertices are based on the order that the cities appear in the file (note that the indexing starts at 1).
-
 ![](docs/a4.png)
 
-## Extra Credit (10 points)
 
-For each of the three "shortest path" searches listed above, if multiple paths "tie" for the shortest, you should return **all** of them.
-
-## Submission Requirements
-
-You must submit to Gradescope at least the following file:
-1.	`AirlineSystem.java`
-
-The idea from your submission is that the autograder can compile and run your programs from the command line WITHOUT ANY additional files or changes, so be sure to test it thoroughly before submitting it. If the autograder cannot compile or run your submitted code it will be graded as if the program does not work.
-
-Note: If you use an IDE such as NetBeans, Eclipse, or IntelliJ, to develop your programs, make sure they will compile and run on the command-line before submitting – this may require some modifications to your program (such as removing some package information).
-
-## Rubrics
-
-Item|Points
-----|------|
-(**Mandatory**) `loadRoutes`|	12
-(**Mandatory**) `retrieveCityNames`|	12
-(**Mandatory**) `retrieveDirectRoutesFrom`|	12
-`fewestStopsItinerary`|	12
-`shortestDistanceItinerary`|	12
-`shortestDistanceItinerary` with transit city|	10
-`addCity`|	10
-`addRoute`|	10
-`updateRoute`|	10
-Extra Credit|	10 points
